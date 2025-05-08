@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="UTF-8">
+  <title>FreelanceConnect Oman</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <a href="/" class="logo">Khidmatee | خدمتي</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <% if (user) { %>
+        <span>Hello, <%= user.name %></span>
+        <a href="/logout">Logout</a>
+      <% } else { %>
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+      <% } %>
+      <a href="/lang/<%= lang === 'en' ? 'ar' : 'en' %>"><%= t.switchLang %></a>
+    </div>
+  </nav>
+</header>
+<main>
